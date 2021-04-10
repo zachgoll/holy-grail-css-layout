@@ -21,22 +21,26 @@
   <body>
     <div class="outer-grid">
       <header>
-        <p><i class="fas fa-bars" onclick="toggleNav()"></i></p>
-        <h2 class="logo">LOGO</h2>
-        <div class="nav-item link1">
-          <i class="fab fa-youtube"></i>
-          <a
-            href="https://www.youtube.com/watch?v=ZZJT5uskuvI&list=PLYQSCk-qyTW37zDPzcAyzCsnypFQrhUcq"
-            class="link1"
-            >Video</a
-          >
+        <div class="header-left">
+          <i class="fas fa-bars" onclick="toggleNav()"></i>
+          <h2 class="logo">LOGO</h2>
         </div>
-        <div class="nav-item">
-          <i class="fas fa-paragraph"></i>
-          <a
-            href="https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/11-css-grid-crash-course/"
-            >Article</a
-          >
+        <div class="header-right">
+          <div class="nav-item link1">
+            <i class="fab fa-youtube"></i>
+            <a
+              href="https://www.youtube.com/watch?v=ZZJT5uskuvI&list=PLYQSCk-qyTW37zDPzcAyzCsnypFQrhUcq"
+              class="link1"
+              >Video</a
+            >
+          </div>
+          <div class="nav-item link2">
+            <i class="fas fa-paragraph"></i>
+            <a
+              href="https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/11-css-grid-crash-course/"
+              >Article</a
+            >
+          </div>
         </div>
       </header>
       <nav class="hide-nav">
@@ -58,8 +62,8 @@
             <h1>🖥️ CSS Grid Tutorial</h1>
             <p>
               This Codepen is an example of the CSS "Holy Grail" Layout AND a
-              CSS Grid tutorial! If you've somehow stumbled upon this example,
-              go ahead,
+              CSS Grid tutorial! If you came from somewhere other than YouTube
+              or my blog, go ahead,
               <a
                 href="https://www.zachgollwitzer.com/posts/2021/fullstack-developer-series/11-css-grid-crash-course/"
                 >click this link</a
@@ -74,9 +78,28 @@
               If you have any questions, feel free to hit me up on Twitter
               <a href="https://twitter.com/zg_dev">@zg_dev</a>!
             </p>
+            <h3>A Grid Mosaic Layout</h3>
             <p>
-              Alright, enough talk, let's throw some good 'ole Lorem Ipsum to
-              finish this article off.
+              Since this is a grid tutorial, I thought I'd add a cool little
+              picture collage using CSS Grid!
+            </p>
+            <div class="collage">
+              <img
+                class="collage-1"
+                src="https://picsum.photos/300/400?random=2"
+              />
+              <img
+                class="collage-2"
+                src="https://picsum.photos/300/500?random=3"
+              />
+              <img
+                class="collage-3"
+                src="https://picsum.photos/300/400?random=4"
+              />
+            </div>
+            <p>
+              Alright, let's throw some good 'ole Lorem Ipsum to finish this
+              article off.
             </p>
             <h3>What is Lorem Ipsum?</h3>
             <p>
