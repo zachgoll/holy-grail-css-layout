@@ -99,6 +99,10 @@ a {
   align-items: center;
 }
 
+.left-header h2 {
+  margin: 0;
+}
+
 .right-header {
   display: flex;
 }
