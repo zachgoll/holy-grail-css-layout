@@ -1,0 +1,286 @@
+/*
+=========================
+SHARED CSS
+=========================
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+}
+header,
+footer {
+  background-color: #1e4040;
+  color: #71d99e;
+}
+.outer-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 90px 1fr;
+  grid-template-areas:
+    "alias-header alias-header"
+    "alias-inner-grid alias-inner-grid";
+}
+
+.outer-grid-expended {
+  grid-template-areas:
+    "alias-header alias-header"
+    "alias-nav alias-inner-grid";
+}
+
+main,
+aside {
+  padding: 20px 5%;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.hide-nav {
+  display: none;
+}
+
+img {
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+/*
+=========================
+CSS OUTER GRID STYLE
+=========================
+*/
+header {
+  grid-area: alias-header;
+}
+
+nav {
+  grid-area: alias-nav;
+}
+/*
+=========================
+HEADER STYLE
+=========================
+*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+a {
+  color: #71d99e;
+}
+.fa-bars {
+  margin-right: 10px;
+}
+.fa-bars:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.left-header {
+  display: flex;
+  align-items: center;
+}
+
+.right-header {
+  display: flex;
+}
+.link-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+}
+.link-header i {
+  font-size: 0.8rem;
+}
+/*
+=========================
+NAV STYLE
+=========================
+*/
+nav {
+  padding-top: 20px;
+  color: #1e4040;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.link-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.link-nav a {
+  color: #1e4040;
+  text-decoration: none;
+}
+.link-nav:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/*
+=========================
+CSS INNER GRID STYLE
+=========================
+*/
+
+.inner-grid {
+  overflow-y: scroll;
+  display: grid;
+  grid-area: alias-inner-grid;
+  grid-template-rows: 1fr auto 60px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "alias-main"
+    "alias-aside"
+    "alias-footer";
+}
+
+main {
+  grid-area: alias-main;
+}
+aside {
+  grid-area: alias-aside;
+}
+footer {
+  grid-area: alias-footer;
+}
+
+/*
+=========================
+ASIDE STYLE
+=========================
+*/
+aside {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*
+=========================
+COLLAGE STYLE
+=========================
+*/
+.collage {
+  height: 550px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 40px 1fr 40px 1fr;
+  align-items: center;
+}
+.collage * {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.collage-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+.collage-2 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  z-index: 2;
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.collage-3 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  z-index: 1;
+  transform: rotate(3deg);
+}
+/*
+=========================
+RESPONSIVE STYLE
+=========================
+*/
+
+/*
+=========================
+MIN WIDTH 576PX
+=========================
+*/
+@media (min-width: 576px) {
+  .outer-grid nav {
+    display: block;
+  }
+  .fa-bars {
+    display: none;
+  }
+  .outer-grid {
+    grid-template-areas:
+      "alias-header alias-header"
+      "alias-nav alias-inner-grid";
+  }
+}
+
+/*
+=========================
+MIN WIDTH 992PX
+=========================
+*/
+@media (min-width: 992px) {
+  .inner-grid {
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: minmax(auto, 700px) 1fr;
+    grid-template-areas:
+      "alias-main alias-aside"
+      "alias-footer alias-footer";
+  }
+  aside {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/*
+=========================
+MIN WIDTH 1440PX
+=========================
+*/
+@media (min-width: 1440px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 950px 1fr;
+    grid-template-areas: "alias-lh . alias-rh";
+  }
+  .left-header {
+    grid-area: alias-lh;
+    justify-self: end;
+  }
+  .right-header {
+    grid-area: alias-rh;
+    justify-self: start;
+  }
+  .outer-grid {
+    grid-template-columns: 1fr 950px 1fr;
+    grid-template-areas:
+      "alias-header alias-header alias-header"
+      "alias-nav alias-inner-grid alias-inner-grid";
+  }
+  nav {
+    justify-self: end;
+  }
+  .link-nav {
+    margin-right: 15px;
+  }
+}
